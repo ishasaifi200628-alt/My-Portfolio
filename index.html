@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isha Saifi · Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #f8faff;
+            color: #1e293b;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .portfolio {
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 2.5rem 2.5rem 3rem;
+            transition: 0.2s;
+        }
+    <div class="resume-popup" id="resumePopup">
+    <div class="resume-popup-content">
+        <span onclick="closeResume()" style="float:right;cursor:pointer;font-size:24px;">&times;</span>
+        <h2>Isha Saifi - Resume</h2>
+        <p><strong>Email:</strong> ishasaifi200628@gmail.com</p>
+        <p><strong>Skills:</strong> AI, Data Analytics, Internal Audit, Prompt Engineering</p>
+        <p><strong>Certificates:</strong> Forage AI in Action, GenAI Analytics, Goldman Sachs Audit</p>
+        <p><strong>GitHub:</strong> github.com/ishasaifi200628-alt</p>
+    </div>
+</div>
+    .resume-popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+}
+.resume-popup-content {
+    background: white;
+    width: 80%; max-width: 800px;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+        /* header */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eef2f6;
+            padding-bottom: 1.75rem;
+        }
+
+        .name-title h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #0b1e33;
+        }
+
+        .name-title .badge {
+            background: #e6edf8;
+            color: #1e4a7a;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 0.3rem;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .quick-links a {
+            background: #f1f5f9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #1e293b;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .quick-links a i {
+            font-size: 1rem;
+            color: #2563eb;
+        }
+
+        .quick-links a:hover {
+            background: #e2e8f0;
+            border-color: #b9c8e0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0, 27, 65, 0.08);
+        }
+
+        /* contact row */
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: #f1f6fd;
+            padding: 0.9rem 1.8rem;
+            border-radius: 60px;
+            margin-bottom: 2.5rem;
+            gap: 1rem;
+        }
+
+        .contact-row .email {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #1e3a6b;
+        }
+
+        .contact-row .email i {
+            margin-right: 8px;
+            color: #2563eb;
+        }
+
+        .contact-row .social-icons {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .contact-row .social-icons a {
+            color: #1e293b;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            background: white;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            text-decoration: none;
+        }
+
+        .contact-row .social-icons a:hover {
+            background: #2563eb;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1.2fr 2fr;
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* about */
+        .about-card {
+            background: #fafcff;
+            padding: 1.5rem 1.5rem 1.8rem;
+            border-radius: 2rem;
+            border: 1px solid #eef3f9;
+            height: fit-content;
+        }
+
+        .about-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-card h3 i {
+            color: #2563eb;
+        }
+
+        .about-card p {
+            line-height: 1.6;
+            color: #334155;
+            font-size: 0.98rem;
+        }
+
+        .about-card .highlight {
+            background: #dbeafe;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: #1e4a7a;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            background: #f1f5f9;
+            padding: 0.4rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: #1e293b;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid transparent;
+            transition: 0.15s;
+            cursor: pointer;
+        }
+
+        .btn i {
+            font-size: 0.8rem;
+            color: #2563eb;
+        }
+
+        .btn-primary {
+            background: #1e3b66;
+            color: white;
+        }
+
+        .btn-primary i {
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0b2a4f;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: #ccd9e8;
+        }
+
+        .btn-outline:hover {
+            background: #e9f0fa;
+        }
+
+        /* certificates */
+        .certs-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            background: white;
+            border: 1px solid #e9eff5;
+            border-radius: 1.8rem;
+            padding: 1.2rem 1.5rem;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+        }
+
+        .cert-item:hover {
+            border-color: #b9d0e9;
+            box-shadow: 0 12px 24px -12px rgba(0, 45, 85, 0.08);
+        }
+
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.8rem;
+        }
+
+        .cert-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0b2b4a;
+        }
+
+        .cert-org {
+            font-weight: 600;
+            color: #2563eb;
+            font-size: 0.9rem;
+            background: #eef4fe;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+        }
+
+        .cert-desc {
+            font-size: 0.95rem;
+            color: #334155;
+            margin: 0.5rem 0 0.3rem;
+            line-height: 1.5;
+        }
+
+        .cert-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            color: #52637a;
+            border-top: 1px dashed #dce5ef;
+            padding-top: 0.7rem;
+        }
+
+        .cert-meta .code {
+            background: #f2f6fc;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-family: monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.3px;
+            color: #1b3e66;
+        }
+
+        .cert-meta i {
+            margin-right: 5px;
+            color: #2563eb;
+        }
+
+        .cert-thumb {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-thumb img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #e9eff5;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .cert-thumb img:hover {
+            transform: scale(1.05);
+            border-color: #2563eb;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+        }
+
+        .cert-thumb .placeholder {
+            width: 80px;
+            height: 80px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 2rem;
+            border: 2px dashed #dce5ef;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.8rem;
+        }
+
+        .whatsapp-share {
+            background: #25D366;
+            color: white;
+            border-color: #25D366;
+        }
+
+        .whatsapp-share i {
+            color: white;
+        }
+
+        .whatsapp-share:hover {
+            background: #1da851;
+            border-color: #1da851;
+        }
+
+        /* lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: 0.2s;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+            color: #2563eb;
+        }
+
+        /* footer */
+        .footer {
+            margin-top: 2.8rem;
+            text-align: center;
+            border-top: 1px solid #eef2f8;
+            padding-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #5a6f89;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer span i {
+            color: #2563eb;
+            margin: 0 4px;
+        }
+
+        /* responsive */
+        @media (max-width: 760px) {
+            .portfolio { padding: 1.5rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .header { flex-direction: column; align-items: start; gap: 0.8rem; }
+            .quick-links { width: 100%; flex-wrap: wrap; }
+            .contact-row { flex-direction: column; align-items: stretch; border-radius: 2rem; padding: 1.2rem; }
+            .contact-row .social-icons { justify-content: center; }
+            .cert-thumb img { width: 60px; height: 60px; }
+        }
+
+        @media (max-width: 450px) {
+            .name-title h1 { font-size: 2rem; }
+            .cert-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+<div class="portfolio">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="name-title">
+            <h1>Isha Saifi</h1>
+            <span class="badge"><i class="fas fa-bolt" style="margin-right: 4px;"></i>AI · Data · Audit</span>
+        </div>
+        <div class="quick-links">
+            <a href="https://github.com/ishasaifi200628-alt/Isha_Portfolio" target="_blank"><i class="fab fa-github"></i> Portfolio</a>
+            <a href="https://github.com/ishasaifi200628-alt" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/isha-saifi-/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- CONTACT ROW -->
+    <div class="contact-row">
+        <span class="email"><i class="fas fa-envelope"></i> ishasaifi200628@gmail.com</span>
+        <div class="social-icons">
+            <a href="ishasaifi200628@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/isha-saifi-/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/ishasaifi200628-alt" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/ishasaifi200628-alt/Isha_Portfolio" target="_blank" aria-label="Portfolio"><i class="fas fa-folder-open"></i></a>
+            <a href="https://web.whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp" style="color: #25D366;"></i></a>
+        </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid-2">
+        <!-- ABOUT -->
+        <div class="about-card">
+            <h3><i class="fas fa-user-astronaut"></i> About</h3>
+            <p>Passionate professional with hands-on experience in AI automation, data analytics, and internal audit. 
+            Completed practical simulations in prompt engineering, risk profiling, delinquency prediction, and collections strategy. 
+            Eager to apply data-driven insights in real-world environments.</p>
+            <div style="margin-top: 1.2rem;">
+                <span class="highlight"><i class="fas fa-calendar-alt"></i> June 2026 · 4x Certifications</span>
+            </div>
+            <div style="margin-top: 1.2rem; display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="Resume.jpg" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Resume.pdf</a>
+                
+
+
+                
+                <a href="https://github.com/ishasaifi200628-alt/Isha_Portfolio" target="_blank" class="btn btn-outline"><i class="fas fa-code"></i> Portfolio repo</a>
+            </div>
+        </div>
+
+        <!-- CERTIFICATES -->
+        <div class="certs-section">
+
+            <!-- Cert 1: Vista - AI in Action -->
+            <div class="cert-item">
+                <div class="cert-header">
+                    <span class="cert-title">AI in Action Job Simulation</span>
+                    <span class="cert-org"><i class="fas fa-certificate"></i> Vista · Forage</span>
+                </div>
+                <div class="cert-desc">
+                    <i class="fas fa-check-circle" style="color: #2563eb; width: 16px;"></i> 
+                    Build Fluency in Prompt & Contextual Engineering · Apply Prompt Skills to Automate a Professional Workflow
+                </div>
+                <div class="cert-meta">
+                    <span><i class="far fa-calendar-alt"></i> June 25, 2026</span>
+                    <span class="code"><i class="fas fa-key"></i> yCKkxoNRod7PwcPB</span>
+                </div>
+                <div class="cert-thumb">
+                    <img src="c1.jpg" alt="Vista Certificate" onclick="openLightbox('c1.jpg')">
+                    <span style="font-size: 0.8rem; color: #64748b;"><i class="fas fa-image"></i> Click to enlarge</span>
+                </div>
+                <div class="btn-group">
+                    <a href="c1.jpg" target="_blank" class="btn btn-outline"><i class="fas fa-eye"></i> c1.jpg</a>
+                    <a href="https://web.whatsapp.com "_blank" class="btn whatsapp-share"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Cert 2: Tata - GenAI Data Analytics -->
+            <div class="cert-item">
+                <div class="cert-header">
+                    <span class="cert-title">GenAI Powered Data Analytics Job Simulation</span>
+                    <span class="cert-org"><i class="fas fa-certificate"></i> Tata · Forage</span>
+                </div>
+                <div class="cert-desc">
+                    <i class="fas fa-check-circle" style="color: #2563eb; width: 16px;"></i> 
+                    Exploratory Data Analysis & Risk Profiling · Predicting Delinquency with AI · Business Report & Data Storytelling · AI-driven Collections Strategy
+                </div>
+                <div class="cert-meta">
+                    <span><i class="far fa-calendar-alt"></i> June 26, 2026</span>
+                    <span class="code"><i class="fas fa-key"></i> u44uvGHxpkEHWMfmnc</span>
+                </div>
+                <div class="cert-thumb">
+                    <img src="c2.jpg" alt="Tata Certificate" onclick="openLightbox('c2.jpg')">
+                    <span style="font-size: 0.8rem; color: #64748b;"><i class="fas fa-image"></i> Click to enlarge</span>
+                </div>
+                <div class="btn-group">
+                    <a href="c2.jpg" target="_blank" class="btn btn-outline"><i class="fas fa-eye"></i> View full</a>
+                    <a href="https://web.whatsapp.com" target="_blank" class="btn whatsapp-share"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Cert 3: Golden Sachi / Goldman Sachs - Internal Audit -->
+            <div class="cert-item">
+                <div class="cert-header">
+                    <span class="cert-title">Internal Audit Job Simulation</span>
+                    <span class="cert-org"><i class="fas fa-building"></i> Goldman Sachs · Forage</span>
+                </div>
+                <div class="cert-desc">
+                    <i class="fas fa-check-circle" style="color: #2563eb; width: 16px;"></i> 
+                    Foundations of Internal Audit · Risk Assessment in Global Banking & Markets
+                </div>
+                <div class="cert-meta">
+                    <span><i class="far fa-calendar-alt"></i> June 26, 2026</span>
+                    <span class="code"><i class="fas fa-key"></i> Jtu2uyZeG9Lw732ZR</span>
+                </div>
+                <div class="cert-thumb">
+                    <img src="c3.jpg" alt="Goldman Sachs Certificate" onclick="openLightbox('c3.jpg')">
+                    <span style="font-size: 0.8rem; color: #64748b;"><i class="fas fa-image"></i> Click to enlarge</span>
+                </div>
+                <div class="btn-group">
+                    <a href="c3.jpg" target="_blank" class="btn btn-outline"><i class="fas fa-eye"></i> View full</a>
+                    <a href="https://web.whatsapp.com" target="_blank" class="btn whatsapp-share"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Cert 4: HP - Critical Thinking -->
+            <div class="cert-item">
+                <div class="cert-header">
+                    <span class="cert-title">Critical Thinking in the AI Era</span>
+                    <span class="cert-org"><i class="fas fa-laptop"></i> HP LIFE</span>
+                </div>
+                <div class="cert-desc">
+                    <i class="fas fa-check-circle" style="color: #2563eb; width: 16px;"></i> 
+                    Use critical thinking to make better decisions · Understand how AI-generated content can distort truth · Strategies to counteract biases · Practical tools to fact-check information
+                </div>
+                <div class="cert-meta">
+                    <span><i class="far fa-calendar-alt"></i> May 21, 2026</span>
+                    <span class="code"><i class="fas fa-key"></i> 85b53020-b0d6-4fdb-a433-e45aef3cae2c</span>
+                </div>
+                <div class="cert-thumb">
+                    <img src="c4.jpg" alt="HP Certificate" onclick="openLightbox('c4.jpg')">
+                    <span style="font-size: 0.8rem; color: #64748b;"><i class="fas fa-image"></i> Click to enlarge</span>
+                </div>
+                <div class="btn-group">
+                    <a href="c4.jpg" target="_blank" class="btn btn-outline"><i class="fas fa-eye"></i> View full</a>
+                    <a href="https://web.whatsapp.com" target="_blank" class="btn whatsapp-share"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- verification row -->
+            <div style="background: #f2f8ff; border-radius: 60px; padding: 0.4rem 1.2rem; font-size: 0.75rem; color: #1d4b77; display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem;">
+                <span><i class="fas fa-id-card"></i> User verification: <strong>6a3d3d6613938a9bba5b17b4</strong></span>
+                <span><i class="fas fa-fingerprint"></i> Issued by Forage & HP LIFE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <span><i class="fas fa-code"></i> built with <i class="fas fa-heart" style="color: #b91c1c;"></i> by Isha Saifi</span>
+        <span>
+            <a href="https://github.com/ishasaifi200628-alt/Isha_Portfolio" target="_blank"><i class="fab fa-github"></i> source</a>
+ 
+        </span>
+        <span>© 2026 · all certificates verified</span>
+    </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="Certificate">
+</div>
+
+<script>
+    // Lightbox functionality
+    function openLightbox(imgSrc) {
+        document.getElementById('lightboxImg').src = imgSrc;
+        document.getElementById('lightbox').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+
+    console.log("🚀 Isha Saifi Portfolio loaded successfully!");
+    console.log("📜 4 Certificates: Vista, Tata, Goldman Sachs, HP");
+</script>
+
+</body>
+</html>
